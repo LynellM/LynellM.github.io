@@ -1,170 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lynell Mines | Cybersecurity &amp; GRC</title>
+  <meta name="description" content="Portfolio of Lynell Mines — cybersecurity and GRC, retired U.S. Army First Sergeant, LSU." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#0f2a4a; --blue:#2563eb; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --bg:#f8fafc;
+            --linkedin:#0A66C2; --github:#181717; --youtube:#FF0000; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:#fff; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1100px; margin:0 auto; padding:0 24px; }
 
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
-    <!-- optional CDN for Foundation Icons ^^ -->
-  </head>
-  <body>
-    <!-- Info Banner For Announcements or Links -->
-    <!-- <a href="https://zurb.com/university/foundation-intro" class="docs-banner course-banner">
-      <div class="info">
-        <h5 class=""><strong>To master everything new in 6.4, along with the rest of Foundation register for our Aug 8th Webinar Class &rsaquo;</strong></h5>
-      </div>
-    </a> -->
-    
-    <!-- <a href="https://zurb.com/wired" id="notice">
-      <div class="info hide-for-small">
-        <div id="clockdiv" class="countdown">
-            <span class="timer-day days"></span>
-            <span class="timer-colon">:</span>
-          <span class="timer-hour hours"></span>
-          <span class="timer-colon">:</span>
-          <span class="timer-hour minutes"></span>
-          <span class="timer-colon">:</span>
-          <span class="timer-seconds seconds"></span>
-        </div>
-      </div>
-    </a> -->
+    /* ---------- Nav ---------- */
+    nav { position:sticky; top:0; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); z-index:10; }
+    nav .wrap { display:flex; justify-content:space-between; align-items:center; height:64px; }
+    .logo { font-weight:800; color:var(--navy); font-size:18px; }
+    .links { display:flex; gap:28px; font-size:15px; color:var(--muted); }
+    .links a:hover { color:var(--blue); }
 
-    
-    <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas>
-      <div class="grid-y grid-padding-x" style="height: 100%;">
-        <br>
-        <div class="cell shrink">
-          <img class="thumbnail" src="https://placehold.it/550x350">
-        </div>
-        <div class="cell auto">
-          <h5>Lynell Mines</h5>
-          <p>
-             After serving 24 years in the U.S. Army culminating as a First Sergeant (E-8), I made the
-    jump into cybersecurity and governance, risk, and compliance (GRC). I'm
-    wrapping up my degree at LSU and heading back to RSM's Houston office in a
-    full-time risk consulting role, with plans to continue my education and pursue a master's degree next.
-  </p>
-  <ul>
-    <li>LSU — Management Information Systems, Cybersecurity concentration, Internal Audit minor</li>
-    <li>Certifications: Security+, A+, MS-900, PMP</li>
-    <li>Incoming Cyber Compliance Associate, RSM Houston (Risk Consulting) — following a Cyber Strategy internship there</li>
-    <li>Next up: Master's in Cybersecurity</li>
-  </ul>
-  <p>This page is where I'll be posting my projects, past and current.</p>
+    /* ---------- Hero ---------- */
+    .hero { padding:88px 0 64px; background:linear-gradient(180deg,#eff4ff 0%,#fff 100%); }
+    .hero .wrap { max-width:1100px; }
+    .hero h1 { max-width:760px; }
+    .eyebrow { color:var(--blue); font-weight:600; font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { font-size:52px; line-height:1.1; color:var(--navy); margin:12px 0 18px; font-weight:800; }
+    .hero p { font-size:18px; color:#4b5563; max-width:560px; }
+    .actions { display:flex; gap:16px; margin-top:28px; align-items:center; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:8px; font-weight:600; font-size:15px; border:1px solid var(--navy); transition:.15s; }
+    .btn.primary { background:var(--navy); color:#fff; }
+    .btn:hover { transform:translateY(-1px); }
+    .photo { width:100%; aspect-ratio:1; border-radius:20px; background:var(--navy); color:#fff; display:grid; place-items:center; font-size:72px; font-weight:800; box-shadow:0 20px 40px rgba(15,42,74,.2); }
+
+    /* ---------- Social icons ---------- */
+    .socials { display:flex; gap:12px; }
+    .social { position:relative; width:48px; height:48px; border-radius:12px; display:grid; place-items:center; background:#fff; border:1px solid var(--line); box-shadow:0 2px 6px rgba(0,0,0,.05); transition:.15s; }
+    .social svg { width:24px; height:24px; }
+    .social.li svg { fill:var(--linkedin); } .social.gh svg { fill:var(--github); } .social.ytb svg { fill:var(--youtube); }
+    a.social:hover { transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.12); }
+    .social.soon { cursor:default; }
+    .social.soon svg { opacity:.45; }
+    .social .badge { position:absolute; top:-8px; right:-14px; background:var(--navy); color:#fff; font-size:9px; font-weight:700; padding:2px 6px; border-radius:99px; letter-spacing:.04em; }
+    .social .tip { position:absolute; bottom:-30px; left:50%; transform:translateX(-50%); background:var(--navy); color:#fff; font-size:12px; padding:3px 8px; border-radius:6px; white-space:nowrap; opacity:0; pointer-events:none; transition:.15s; }
+    .social:hover .tip, .social:focus .tip { opacity:1; }
+
+    section { padding:80px 0; }
+    h2 { font-size:32px; color:var(--navy); margin-bottom:8px; }
+    .sub { color:var(--muted); margin-bottom:36px; }
+
+    /* ---------- About ---------- */
+    .about { display:grid; grid-template-columns:1.4fr 1fr; gap:56px; align-items:start; }
+    .about .photo { max-width:400px; justify-self:end; }
+    .about p { margin-bottom:14px; color:#374151; }
+    .facts { list-style:none; margin-top:24px; }
+    .facts li { padding:14px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:16px; font-size:15px; }
+    .facts li span:first-child { color:var(--muted); }
+    .facts li span:last-child { font-weight:600; text-align:right; }
+
+    /* ---------- Journey timeline ---------- */
+    .timeline { position:relative; list-style:none; margin-left:8px; }
+    .timeline::before { content:''; position:absolute; left:151px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--navy),var(--blue),#cbd5e1); }
+    .timeline li { display:grid; grid-template-columns:128px 1fr; gap:48px; padding-bottom:28px; position:relative; }
+    .timeline li::before { content:''; position:absolute; left:144px; top:22px; width:16px; height:16px; border-radius:50%; background:#fff; border:4px solid var(--navy); }
+    .timeline li.current::before { border-color:var(--blue); box-shadow:0 0 0 5px rgba(37,99,235,.15); }
+    .timeline li.next::before { border:3px dashed #94a3b8; }
+    .when { text-align:right; font-weight:700; color:var(--navy); font-size:14px; padding-top:18px; }
+    .when small { display:block; font-weight:500; color:var(--muted); font-size:12px; }
+    .step { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 22px; box-shadow:0 2px 8px rgba(0,0,0,.03); }
+    .step h3 { font-size:17px; color:var(--navy); }
+    .step .org { color:var(--blue); font-weight:600; font-size:14px; }
+    .step p { color:var(--muted); font-size:14px; margin-top:6px; }
+    .timeline li.next .step { border-style:dashed; background:var(--bg); }
+
+    /* ---------- Projects ---------- */
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .card { border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; transition:.2s; display:flex; flex-direction:column; }
+    .card:hover { box-shadow:0 12px 28px rgba(0,0,0,.08); transform:translateY(-3px); }
+    .thumb { height:160px; display:grid; place-items:center; color:#fff; font-weight:700; font-size:14px; letter-spacing:.06em; }
+    .card .body { padding:20px; flex:1; display:flex; flex-direction:column; }
+    .card h3 { font-size:18px; margin-bottom:6px; }
+    .card p { color:var(--muted); font-size:14px; flex:1; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+    .tag { font-size:12px; background:#eef2ff; color:#3730a3; padding:3px 10px; border-radius:99px; }
+    .soon-card { opacity:.7; }
+
+    /* ---------- YouTube ---------- */
+    .yt { background:var(--navy); color:#fff; border-radius:16px; padding:40px; display:flex; align-items:center; gap:28px; }
+    .yt-logo { width:88px; flex-shrink:0; }
+    .yt-logo svg { width:88px; height:88px; fill:var(--youtube); }
+    .yt h3 { font-size:24px; }
+    .yt p { color:#cbd5e1; }
+    .pill { margin-left:auto; background:#fff; color:var(--navy); padding:8px 16px; border-radius:99px; font-weight:700; font-size:13px; white-space:nowrap; }
+
+    /* ---------- Connect ---------- */
+    .contact { background:var(--bg); text-align:center; }
+    .btn.li { background:var(--linkedin); border-color:var(--linkedin); color:#fff; font-size:16px; padding:14px 26px; }
+    .btn.li svg { width:22px; height:22px; fill:#fff; }
+    .contact .socials { justify-content:center; margin-top:28px; }
+    footer { text-align:center; padding:28px; color:var(--muted); font-size:14px; }
+
+    @media (max-width:800px) {
+      .about { grid-template-columns:1fr; }
+      .about .photo { max-width:260px; justify-self:start; order:-1; }
+      h1 { font-size:38px; }
+      .grid { grid-template-columns:1fr; }
+      .links { display:none; }
+      .yt { flex-direction:column; align-items:flex-start; } .pill { margin-left:0; }
+      .timeline::before { left:7px; }
+      .timeline li { grid-template-columns:1fr; gap:6px; padding-left:32px; }
+      .timeline li::before { left:0; top:2px; }
+      .when { text-align:left; padding-top:0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Brand icons (defined once, reused below) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.370 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.930 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+  </svg>
+
+  <nav><div class="wrap">
+    <a href="#" class="logo">Lynell Mines</a>
+    <div class="links"><a href="#about">About</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#video">Video</a><a href="#connect">Connect</a></div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap">
+    <div>
+      <div class="eyebrow">Cybersecurity · GRC · Risk Consulting</div>
+      <h1>Leading teams for 24 years. Now securing organizations.</h1>
+      <p>Retired Army First Sergeant, LSU Management Information Systems student, and incoming Cyber Compliance Associate at RSM.</p>
+      <div class="actions">
+        <div class="socials">
+          <a class="social li" href="https://www.linkedin.com/in/lynell-mines/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg><span class="tip">LinkedIn</span></a>
+          <a class="social gh" href="https://github.com/Lynell-M" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg><span class="tip">GitHub</span></a>
+          <!-- When your channel is live: change this <span> to <a href="YOUR_CHANNEL_URL" target="_blank" rel="noopener">, remove "soon" + the badge -->
+          <span class="social ytb soon" tabindex="0" aria-label="YouTube (coming soon)"><svg><use href="#i-youtube"/></svg><span class="badge">SOON</span><span class="tip">YouTube — coming soon</span></span>
         </div>
       </div>
     </div>
-    
-    <div class="off-canvas-content" data-off-canvas-content>
-      <div class="title-bar hide-for-large">
-        <div class="title-bar-left">
-          <button class="menu-icon" type="button" data-toggle="my-info"></button>
-          <span class="title-bar-title">Lynell Mines</span>
-        </div>
-      </div>
-    
-    
-      <div class="callout primary">
-        <article class="grid-container">
-          <div class="">
-            <h1>Hello! This is the portfolio of Lynell Mines.</h1>
-            <p class="lead">A running collection of the projects I've built, from coursework to hands-on cybersecurity work.</p>
-          </div>
-        </article>
-      </div>
-    
-    
-      <article class="grid-container">
-        <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4">
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-          <div class="cell">
-            <img class="thumbnail" src="https://placehold.it/550x550">
-            <h5>My Site</h5>
-          </div>
-        </div>
-    
-        <hr>
-    
-        <div class="grid-x grid-margin-x">
-          <div class="medium-6 cell">
-            <h3>Contact Me</h3>
-            <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor.</p>
-            <ul class="menu">
-              <li><a href="#">Dribbble</a></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Yo</a></li>
-            </ul>
-          </div>
-          <div class="medium-6 cell">
-            <label>Name
-              <input type="text" placeholder="Name">
-            </label>
-            <label>Email
-              <input type="text" placeholder="Email">
-            </label>
-            <label>
-              Message
-              <textarea placeholder="holla at a designer"></textarea>
-            </label>
-            <input type="submit" class="button expanded" value="Submit">
-          </div>
-        </div>
-      </article>
+  </div></header>
+
+  <section id="about" style="padding-top:40px"><div class="wrap about">
+    <div>
+      <h2>About</h2>
+      <p>After 24 years in the U.S. Army, culminating as a First Sergeant (E-8), I made the jump into cybersecurity and governance, risk, and compliance (GRC).</p>
+      <p>I'm finishing my degree at LSU and returning to RSM's Houston office full-time in Risk Consulting after a Cyber Strategy internship there. Next up: a master's in cybersecurity.</p>
+      <p>This site is where I share my projects, from coursework to hands-on security work.</p>
+      <ul class="facts">
+      <li><span>Education</span><span>LSU — MIS, Cybersecurity</span></li>
+      <li><span>Minor</span><span>Internal Audit</span></li>
+      <li><span>Certifications</span><span>Security+ · A+ · MS-900 · PMP</span></li>
+      </ul>
     </div>
-    
+    <!-- Your headshot goes here: replace this div with <img class="photo" src="headshot.jpg" alt="Lynell Mines" style="object-fit:cover"> -->
+    <div class="photo">LM</div>
+  </div></section>
 
+  <section id="journey" style="background:var(--bg)"><div class="wrap">
+    <h2>The Journey</h2>
+    <p class="sub">From leading soldiers to securing organizations.</p>
+    <ul class="timeline">
+      <li><div class="when">24 Years<small>Retired 2024</small></div>
+        <div class="step"><h3>First Sergeant (E-8)</h3><div class="org">U.S. Army</div>
+        <p>Led soldiers, operations, and programs, including logistics program management and strategic operations analysis.</p></div></li>
+      <li><div class="when">2024 – 2025<small>Aberdeen Proving Ground</small></div>
+        <div class="step"><h3>Senior Logistics Analyst</h3><div class="org">S&amp;K Federal Services</div>
+        <p>Rebuilt legacy reporting into Power BI dashboards used by 200+ people.</p></div></li>
+      <li class="current"><div class="when">Now<small>Expected 2027</small></div>
+        <div class="step"><h3>B.S. Management Information Systems</h3><div class="org">Louisiana State University</div>
+        <p>Cybersecurity concentration, Internal Audit minor. Blue Team member with the LSU Cybersecurity Clinic, focused on operational technology (OT) and industrial control systems (ICS) security.</p></div></li>
+      <li><div class="when">Summer 2026<small>Houston, TX</small></div>
+        <div class="step"><h3>Cyber Strategy Intern</h3><div class="org">RSM US LLP — Risk Consulting</div>
+        <p>Assessed client security and compliance programs against ISO 27001 and NIST.</p></div></li>
+      <li><div class="when">After Graduation<small>Houston, TX</small></div>
+        <div class="step"><h3>Cyber Compliance Associate</h3><div class="org">RSM US LLP — Risk Consulting</div>
+        <p>Returning full-time to the same team.</p></div></li>
+      <li class="next"><div class="when">Next</div>
+        <div class="step"><h3>Master's in Cybersecurity</h3><p>Continuing to build technical depth.</p></div></li>
+    </ul>
+  </div></section>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
+  <section id="projects"><div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Selected work. More being added regularly.</p>
+    <div class="grid">
+      <a class="card" href="#"><div class="thumb" style="background:linear-gradient(135deg,#1e3a8a,#2563eb)">PORTFOLIO SITE</div>
+        <div class="body"><h3>This Website</h3><p>Designed, built, and deployed a personal portfolio with a custom domain.</p>
+        <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">GitHub</span><span class="tag">Cloudflare</span></div></div></a>
+      <a class="card" href="#"><div class="thumb" style="background:linear-gradient(135deg,#065f46,#10b981)">CTF WRITE-UPS</div>
+        <div class="body"><h3>picoCTF Web Exploitation</h3><p>Write-ups on credential bypass, SQL injection, and file upload challenges.</p>
+        <div class="tags"><span class="tag">Web Security</span><span class="tag">CTF</span></div></div></a>
+      <a class="card" href="#"><div class="thumb" style="background:linear-gradient(135deg,#7c2d12,#f97316)">GEAUXHACK '26</div>
+        <div class="body"><h3>GeauxHack '26 Hackathon</h3><p>Co-chairing LSU's AI hackathon: business plan, competition tracks, and sponsorship model.</p>
+        <div class="tags"><span class="tag">Leadership</span><span class="tag">AI</span></div></div></a>
+      <div class="card soon-card"><div class="thumb" style="background:#94a3b8">COMING SOON</div>
+        <div class="body"><h3>Project Title</h3><p>Short description of the problem and what you built.</p><div class="tags"><span class="tag">Tag</span></div></div></div>
+      <div class="card soon-card"><div class="thumb" style="background:#94a3b8">COMING SOON</div>
+        <div class="body"><h3>Project Title</h3><p>Short description of the problem and what you built.</p><div class="tags"><span class="tag">Tag</span></div></div></div>
+      <div class="card soon-card"><div class="thumb" style="background:#94a3b8">COMING SOON</div>
+        <div class="body"><h3>Project Title</h3><p>Short description of the problem and what you built.</p><div class="tags"><span class="tag">Tag</span></div></div></div>
+    </div>
+  </div></section>
+
+  <section id="video" style="padding-top:0"><div class="wrap">
+    <div class="yt">
+      <div class="yt-logo"><svg aria-label="YouTube"><use href="#i-youtube"/></svg></div>
+      <div><h3>YouTube Channel</h3><p>Walkthroughs, presentations, and lessons learned on the path into cybersecurity.</p></div>
+      <span class="pill">COMING SOON</span>
+    </div>
+  </div></section>
+
+  <section id="connect" class="contact"><div class="wrap">
+    <h2>Let's connect</h2>
+    <p class="sub">Interested in working together or talking cybersecurity, GRC, or the veteran transition? Reach out on LinkedIn.</p>
+    <a class="btn li" href="https://www.linkedin.com/in/lynell-mines/" target="_blank" rel="noopener"><svg><use href="#i-linkedin"/></svg>Connect on LinkedIn</a>
+    <div class="socials">
+      <a class="social gh" href="https://github.com/Lynell-M" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github"/></svg><span class="tip">GitHub</span></a>
+      <span class="social ytb soon" tabindex="0" aria-label="YouTube (coming soon)"><svg><use href="#i-youtube"/></svg><span class="badge">SOON</span><span class="tip">YouTube — coming soon</span></span>
+    </div>
+  </div></section>
+  <footer>© 2026 Lynell Mines · Baton Rouge, LA</footer>
+</body>
 </html>
